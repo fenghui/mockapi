@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Mock Api</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="container">
+      <h1>Mock Api</h1>
+      <a href="/add">新增mock接口</a>
+      <ul class="list">
+      <% for(let i = 0; i < apiList.length; i++) { %>
+        <li>
+          <a target="_blank" href="/api/<%=apiList[i]._id%>">
+            <%=i+1%>. <%=apiList[i].type == 1 ? '[文件]' : '';%>  <%=apiList[i].title%>
+          </a>
+          <% if(apiList[i].type == 0) { %>
+          <a href="/edit/<%=apiList[i]._id%>">编辑</a>
+          <% } %>
+          <a href="javascript:if(confirm('确定删除?')) location.href='/doDel/<%=apiList[i]._id%>'">删除</a>
+        </li>
+      <% } %>
+      </ul>
+    </div>
   </body>
 </html>

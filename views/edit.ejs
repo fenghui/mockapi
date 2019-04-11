@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mock Api</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h1>编辑 Mock Api</h1>
+      <form class="form" method="post" action="/doEdit">
+        <div>
+          <label>标题:</label>
+          <input type="hidden" name="id" value="<%=_id%>"/>
+          <input name="title" type="text" value="<%=title%>"/>
+        </div>
+        <div>
+          <label>返回模板:</label>
+          <textarea name="template"><%=template%></textarea>
+        </div>
+        <div>
+          <button type="submit">修改</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

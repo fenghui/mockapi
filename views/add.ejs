@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mock Api</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script>
+      function onChange1() {
+        document.getElementById('layout_temp').style.display = 'block';
+        document.getElementById('layout_upload').style.display = 'none';
+      }
+
+      function onChange2() {
+        document.getElementById('layout_temp').style.display = 'none';
+        document.getElementById('layout_upload').style.display = 'block';
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>添加 Mock Api</h1>
+      <form class="form" method="post" action="/doAdd"  enctype="multipart/form-data">
+        <div>
+          <label>标题:</label>
+          <input name="title" type="text"/>
+        </div>
+
+        <div>
+            <label>数据模型:</label>
+            <label><input onchange="onChange1()" id="rdo_temp" name="dataType" value="0" type="radio" checked>返回模板</label>
+            <label><input onchange="onChange2()" id="rdo_file" name="dataType" value="1" type="radio">上传文件</label>
+          </div>
+
+        <div id="layout_temp">
+          <label>返回模板:</label>
+          <textarea name="template"></textarea>
+        </div>
+
+        <div id="layout_upload" style="display:none;">
+            <label>上传文件:</label>
+            <input type="file" name="file" />
+          </div>
+        <div>
+          <button type="submit">添加</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

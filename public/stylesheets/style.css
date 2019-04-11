@@ -3,6 +3,68 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+
 a {
   color: #00B7FF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.list {
+  list-style-type: none;
+  width: 100%;
+}
+
+.list li {
+  display: flex;
+  line-height: 30px;
+  height: 30px;
+}
+
+.list li a:nth-child(1) {
+  flex: 1;
+}
+
+.list li a:nth-child(2) {
+  margin-right: 10px;
+}
+
+.form {
+  width: 100%;
+}
+
+.form div {
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 20px;
+}
+
+.form div button {
+  height: 30px;
+}
+
+.form textarea {
+  min-height: 100px;
+}
+
+input, textarea {
+  border: 1px solid #ccc;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+button {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
 }
